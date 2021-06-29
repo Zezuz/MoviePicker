@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Movies>
+
+<h1 style="text-align:center; color: white">Movies</h1>
+
+<div style="text-align:center;">
+    <select class="form-select" style="background-color: yellow; text-align: center;" aria-label="Default select example">
+
+        <option selected>Open this select menu</option>
+        <option value="1">Action</option>
+        <option value="2">Comedy</option>
+        <option value="3">Drama</option>
+        <option value="4">Mystery</option>
+        <option value="5">Fantasy</option>
+        <option value="6">Horror</option>
+        <option value="7">Romance</option>
+        <option value="8">Thriller</option>
+        <option value="9">Western</option>
+        <option value="10">Adventure</option>
+    </select>
+
+    
+</div>
+
+
+
+<table class="table" style="color: white;">
+    <tr>
+        <th>movieID</th>
+        <th>Name</th>
+        <th>YearOfRelease</th>
+        <th>Rating</th>
+        <th>Genre</th>
+
+    </tr>
+
+    @foreach (var movie in Model)
+    {
+<tr>
+    6
+    <td><a href=/Movies/ViewMovie/@movie.movieID>@movie.movieID</a></td>
+    <td>@movie.Name</td>
+    <td>@movie.YearOfRelease</td>
+    <td>@movie.Rating</td>
+    <td>@movie.Genre</td>
+
+</tr>
+
+    }
+</table>
+
+
+
+
+
