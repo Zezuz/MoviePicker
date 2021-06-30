@@ -7,7 +7,7 @@ namespace MoviePicker.Models
 {
     public class Movies
     {
-        public int movieID { get; set; }
+        public int movieid { get; set; }
         public string Name { get; set; }
         public double Rating { get; set; }
         public int YearOfRelease { get; set; }

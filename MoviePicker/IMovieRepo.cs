@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace MoviePicker
 {
-    public interface IMovieRepo
+    public interface IMovieRepo 
     {
         public IEnumerable<Movies> GetAllMovies();
 
-        public Movies GetMovie(int movieID);
+        public Movies GetMovie(int id);
 
         public IEnumerable<Movies> GetAllGenre(string Genre);
     }

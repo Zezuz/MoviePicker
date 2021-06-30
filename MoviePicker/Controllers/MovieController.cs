@@ -20,9 +20,9 @@ namespace MoviePicker.Controllers
             return View(movies);
         }
 
-        public IActionResult ViewMovie(int movieID) 
+        public IActionResult ViewMovie(int id) 
         {
-            var movie = repo.GetMovie(movieID);
+            var movie = repo.GetMovie(id);
 
             return View(movie);
         }

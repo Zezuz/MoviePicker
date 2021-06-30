@@ -11,6 +11,7 @@ namespace MoviePicker
     public class MovieRepo : IMovieRepo
     {
         private readonly IDbConnection _conn;
+        
 
         public MovieRepo(IDbConnection conn)
         {
@@ -22,9 +23,10 @@ namespace MoviePicker
             return _conn.Query<Movies>("SELECT * FROM MOVIES");
         }
 
-        public Movies GetMovie(int movieID)
+        public Movies GetMovie(int id)
         {
-            return _conn.QuerySingle<Movies>("Select * From Movies where movieID = @id", new { movieID = movieID});
+            
+            return _conn.QuerySingle<Movies>("SELECT * FROM MOVIES WHERE MOVIEID = @id", new { id = id });
         }
 
         public IEnumerable<Movies> GetAllGenre(string Genre)
