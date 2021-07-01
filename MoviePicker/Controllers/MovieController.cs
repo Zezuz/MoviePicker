@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using MoviePicker.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,5 +34,7 @@ namespace MoviePicker.Controllers
 
             return View(Genre2);
         }
+
+        
     }
 }

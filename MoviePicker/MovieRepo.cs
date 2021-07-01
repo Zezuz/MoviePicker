@@ -33,5 +33,7 @@ namespace MoviePicker
         {
             return _conn.Query<Movies>("Select * From Movies where Genre = @Genre", new { genre = Genre });
         }
+
+       
     }
 }

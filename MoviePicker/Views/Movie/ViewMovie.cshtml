@@ -8,14 +8,21 @@
         <th>Name</th>
         <th>Year of Release</th>
         <th>Rating</th>
-        
+        <th>Genre</th>
+
     </tr>
     <tr>
         <td>@Model.movieid</td>
         <td>@Model.Name</td>
         <td>@Model.YearOfRelease</td>
         <td>@Model.Rating</td>
-        
+        <td>@Model.Genre</td>
+
     </tr>
 
 </table>
+
+<div style="display: block">
+    <a href="/Movie/UpdateMovie/@Model.movieid">Update this Product</a>
+</div>
+
