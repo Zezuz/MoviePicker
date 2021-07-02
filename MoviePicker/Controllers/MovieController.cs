@@ -15,9 +15,14 @@ namespace MoviePicker.Controllers
         {
             this.repo = repo;
         }
-        public IActionResult Index()
+        public IActionResult Index(string searchString)
         {
             var movies = repo.GetAllMovies();
+
+            if (!String.IsNullOrEmpty(searchString)) 
+            {
+                movies = movies.Where(s => s.Name.Contains(searchString));
+            }
             return View(movies);
         }
 
