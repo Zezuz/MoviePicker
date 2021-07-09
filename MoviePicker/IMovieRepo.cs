@@ -12,7 +12,7 @@ namespace MoviePicker
 
         public Movies GetMovie(int id);
 
-        public IEnumerable<Movies> GetAllGenre(string Genre);
+        public IEnumerable<Movies> GetGenre(string Genre);
 
         
     }

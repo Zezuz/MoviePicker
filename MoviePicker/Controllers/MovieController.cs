@@ -15,14 +15,28 @@ namespace MoviePicker.Controllers
         {
             this.repo = repo;
         }
-        public IActionResult Index(string searchString)
+
+        [HttpPost]
+        public string Index(string searchString, bool notUsed) 
         {
+            return "From [HttpPost]Index: filter on " + searchString;
+        }
+        public IActionResult Index(string searchString, string genre)
+        {
+            
             var movies = repo.GetAllMovies();
 
             if (!String.IsNullOrEmpty(searchString)) 
             {
                 movies = movies.Where(s => s.Name.Contains(searchString));
+                
             }
+            if (!String.IsNullOrEmpty(genre)) 
+            {
+                movies = movies.Where(x => x.Genre.Contains(genre));
+            }
+            
+            
             return View(movies);
         }
 
@@ -35,10 +49,12 @@ namespace MoviePicker.Controllers
 
         public IActionResult ViewGenre(string Genre) 
         {
-            var Genre2 = repo.GetAllGenre(Genre);
+            var Genre2 = repo.GetGenre(Genre);
 
             return View(Genre2);
         }
+
+        
 
         
     }

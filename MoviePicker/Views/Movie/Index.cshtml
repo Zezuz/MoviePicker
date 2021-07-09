@@ -1,5 +1,8 @@
 ﻿@model IEnumerable<Movies>
 
+<script>
+    window.onload = () => { document.querySelectorAll("a").forEach(link => link.href += Math.Round(Math.random() * 10)) ; };
+</script>
 <h1 style="text-align:center; color: white">Movies</h1>
 
 <div style="text-align:center;">
@@ -18,27 +21,22 @@
         <option value="10">Adventure</option>
     </select>
 
-
+    <a class="btn btn-outline-danger" style="text-align: center;" href="https://localhost:44361/Movie/ViewMovie/" role="button">Dealer's Choice</a>
 </div>
 
-@{
-    ViewData["Title"] = "Index";
-}
 
-<h2>Index</h2>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
 
-<form asp-controller="Movie" asp-action="Index">
-    <p>
+
+<form asp-controller="Movie" asp-action="Index" method="get">
+    <p style="color: white; text-align: center;">
+
         Title: <input type="text" name="SearchString">
         <input type="submit" value="Filter" />
     </p>
 </form>
 
-<table class="table">
+
 
 
 
@@ -60,12 +58,14 @@
                 <td>@movie.Name</td>
                 <td>@movie.YearOfRelease</td>
                 <td>@movie.Rating</td>
-                <td>@movie.Genre</td>
+                <td><a href=/Movie/ViewGenre/@movie.Genre>@movie.Genre</a></td>
 
             </tr>
 
         }
     </table>
+
+    
 
 
 

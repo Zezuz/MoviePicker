@@ -29,7 +29,7 @@ namespace MoviePicker
             return _conn.QuerySingle<Movies>("SELECT * FROM MOVIES WHERE MOVIEID = @id", new { id = id });
         }
 
-        public IEnumerable<Movies> GetAllGenre(string Genre)
+        public IEnumerable<Movies> GetGenre(string Genre)
         {
             return _conn.Query<Movies>("Select * From Movies where Genre = @Genre", new { genre = Genre });
         }
